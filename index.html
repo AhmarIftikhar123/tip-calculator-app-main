@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="Tailwind_css.css" />
+
+    <link rel="stylesheet" href="vanila_ccs.css" />
+  </head>
+  <body
+    class="min-h-screen flex flex-col justify-center items-center bg-Light_grayish_cyan sm:gap-6"
+  >
+    <div class="logo w-16 xs:w-14 xs:my-6 xl:w-24">
+      <img src="images/logo.svg" alt="" class="w-full" />
+    </div>
+
+    <!-- Main_container -->
+
+    <div
+      class="main_container bg-White sm:w-[600px] xl:w-[900px] overflow-hidden rounded-lg
+      "
+    >
+      <!-- card -->
+
+      <div
+        class="card sm:grid sm:grid-cols-2 gap-4  overflow-hidden rounded-2xl p-4 xs:px-6
+        xs:flex xs:flex-col xs:gap-4 xl:gap-6"
+      >
+        <!-- left_section -->
+
+        <div class="left_sec flex flex-col gap-5 xs:gap-2 xl:gap-8">
+          <!-- bill_block -->
+
+          <div class="bill_block">
+            <label for="bill" class="label_styles">Bill</label>
+
+            <!-- bill_input -->
+            <div class="bill_input relative">
+              <input
+                type="number"
+                id="bill"
+                placeholder="0"
+                class="bill input_styles"
+              />
+
+              <img
+                src="images/icon-dollar.svg"
+                alt="dollar_logo"
+                class="xl:w-[.8rem] absolute top-0 left-0 "
+              />
+            </div>
+          </div>
+
+          <!-- tip_%_block -->
+
+          <div class="tip_block flex flex-col gap-2">
+            <label class="text-base text-Grayish_cyan"> Select Tip %</label>
+            <div class="grid grid-cols-3 gap-3">
+              <button class="btn_styles">5%</button>
+              <button class="btn_styles">10%</button>
+              <button class="btn_styles">15%</button>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+              <button class="btn_styles">25%</button>
+              <button class="btn_styles">50%</button>
+              <input type="number" placeholder="Custom" id="custom_tip" class="input_styles xs:text-base sm:text-base xl:text-lg" />
+            </div>
+          </div>
+
+          <!-- People_block -->
+
+          <div class="people_block ">
+            <div class="flex_item flex justify-between items-end">
+
+              <label for="people_num" class="label_styles"
+                >Number of People</label
+              >
+              <small id="error_msg" class="text-[.5rem]  xl:text-xs text-red hidden  ">
+                Can't be zero
+              </small>
+            </div>
+
+            <!-- people_inp -->
+
+            <div class="people_inp relative">
+              <input
+                type="number"
+                class="input_styles"
+                id="people_num"
+                placeholder="0"
+              />
+
+              <img
+                src="images/icon-person.svg"
+                alt=""
+                class="xl:w-4 absolute top-0 left-0"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right_section -->
+
+        <div class="right_sec  bg-Very_dark_cyan overflow-hidden rounded-lg grid grid-cols-none  items-center px-6 py-8 xs:py-6  sm:gap-8 xs:gap-6 xl:gap-12 ">
+          <!-- tip_amt_block -->
+
+          <div class="tip_amt_block flex justify-between w-full items-center">
+            <p class=" text-sm font-semibold text-White xl:text-lg ">
+              Tip Amount
+              <br />
+              <small class="text-Light_grayish_cyan text-xs xl:text-sm"> /person </small>
+            </p>
+
+            <div class="tip_amt_opt">
+              <!-- tip_amount -->
+
+              <span class="tip_amount text-3xl text-Strong_cyan xs:text-2xl
+              xl:text-3xl" id="tip_amount"> $0.00 </span>
+            </div>
+          </div>
+
+          <!-- Total_amount_block -->
+
+          <div class="tip_amt_block flex justify-between w-full items-center">
+            <p class=" text-sm font-semibold text-White xl:text-lg ">
+              Total
+              <br />
+              <small class="text-Light_grayish_cyan text-xs xl:text-sm"> / person </small>
+            </p>
+
+            <!-- Total_amount_Opt -->
+
+            <div class="total_amt">
+              <span class="tip_amount text-3xl text-Strong_cyan xs:text-2xl
+              xl:text-3xl" id="total_amount">$0.00</span>
+            </div>
+          </div>
+
+          <!-- Reset_btn -->
+
+          <button type="button" id="resetBtn" class="reset_btn ">Reset</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
